@@ -10,8 +10,7 @@
 # ----------------------------------------------------------------------------
 # This is a class for the Stack data structure. It is an iterable data
 # structure where items can be added (push) and removed (pop). Items are added
-# to the top of the stack but, items can be removed from anywhere within the 
-# stack.
+# to the top of the stack and, items are removed from the top of the stack.
 #
 # Class Methods
 # ----------------------------------------------------------------------------
@@ -22,7 +21,7 @@
 # length                      Returns the number of items in the stack
 # is_empty                    Verifies if the stack is empty, or not
 # push                        Adds an item to the top of the stack
-# pop                         Pops off an item from the stack
+# pop                         Pops off an item from the top of the stack
 #*****************************************************************************
 # Imported Packages:
 from typing import TypeVar
