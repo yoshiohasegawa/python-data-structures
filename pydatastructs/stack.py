@@ -81,10 +81,10 @@ class Stack:
         This method is used to remove an item from the top of the stack.
 
         Raises:
-            IndexError: Raised when there are no items to pop.
+            IndexError: Raised when there are no items to remove.
 
         Returns:
-            T: The popped item.
+            T: The removed item.
         """
         if self._stack == []:
             raise IndexError('Index out of range, the stack is empty.')
