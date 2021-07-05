@@ -10,9 +10,9 @@
 # ----------------------------------------------------------------------------
 # This is a class for the Tree data structure. It is a data structure 
 # containing nodes. When this class is instantiated, the root node is created.
-# Each node may have a value property and, a collection of child nodes within
-# the children property. Each child node is a sub-tree. There is no limit to
-# the number of child nodes for each parent node.
+# Each node has a value property and, a collection of child nodes within the
+# children property. Each child node is a sub-tree. There is no limit to the
+# number of child nodes for each parent node.
 #
 # Class Methods
 # ----------------------------------------------------------------------------
