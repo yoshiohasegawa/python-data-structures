@@ -56,7 +56,6 @@ def test_pop(stack: Stack):
     assert item == {'3': 3}
     assert stack.get() == [1, '2']
 
-    stack.push({'3': 3})
     for idx in range(stack.length()):
         stack.pop()
 
