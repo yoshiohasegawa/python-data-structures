@@ -6,14 +6,14 @@ README = (HERE/'README.md').read_text()
 
 setup(
   name = 'pydatastructs',
-  version = '1.0.0',
+  version = '1.1.0',
   author = 'Yoshio Hasegawa',
   author_email = 'yoshio.seisuke.hasegawa@gmail.com',
   description = 'A package that contains common data structures',
   long_description = README,
   long_description_content_type = 'text/markdown',
   url = 'https://github.com/yoshiohasegawa/python-data-structures',
-  download_url = 'https://github.com/yoshiohasegawa/python-data-structures/archive/refs/tags/v1.0.0.tar.gz',
+  download_url = 'https://github.com/yoshiohasegawa/python-data-structures/archive/refs/tags/v1.1.0.tar.gz',
   license='MIT',
   classifiers=[
     "Development Status :: 4 - Beta",
