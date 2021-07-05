@@ -86,7 +86,6 @@ class Stack:
         Returns:
             T: The popped item.
         """
-
         if self._stack == []:
             raise IndexError('Index out of range, the stack is empty.')
         else:
