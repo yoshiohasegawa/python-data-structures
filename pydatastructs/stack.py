@@ -21,7 +21,7 @@
 # length                      Returns the number of items in the stack
 # is_empty                    Verifies if the stack is empty, or not
 # push                        Adds an item to the top of the stack
-# pop                         Pops off an item from the top of the stack
+# pop                         Removes an item from the top of the stack
 #*****************************************************************************
 # Imported Packages:
 from typing import TypeVar
@@ -78,7 +78,7 @@ class Stack:
     
     def pop(self) -> T:
         """
-        This method is used to pop an item off of the top of the stack.
+        This method is used to remove an item from the top of the stack.
 
         Raises:
             IndexError: Raised when there are no items to pop.
