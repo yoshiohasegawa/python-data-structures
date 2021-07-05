@@ -58,7 +58,7 @@ class Tree:
     
     def contains(self, value: T) -> bool:
         """
-        This method verifies whether a value in found within this sub-tree, or not.
+        This method verifies whether a value is within this sub-tree, or not.
 
         Args:
             value (T): The value to search for.
