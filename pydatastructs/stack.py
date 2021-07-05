@@ -69,7 +69,7 @@ class Stack:
 
     def push(self, val: T) -> None:
         """
-        This method is used to push items to the top of the stack.
+        This method is used to add items to the top of the stack.
 
         Args:
             val (T): An item of any data type.
