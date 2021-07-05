@@ -1,13 +1,13 @@
 # Third party imports
 import pytest
 # pydatastructs imports
-from pydatastructs import Stack
+from pydatastructs.stack import Stack
 
 # Setup
 # initialize _stack in pytest fixture to be used in individual method tests
 @pytest.fixture
 def stack():
-    _stack = Stack([1, '2', {'3': 3}])
+    _stack = Stack(collection=[1, '2', {'3': 3}])
     return _stack
 
 # Executions

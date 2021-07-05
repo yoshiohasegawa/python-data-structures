@@ -36,6 +36,13 @@ class Queue:
     """
 
     def __init__(self, collection=[]):
+        """
+        An iterable data structure or collection that may contain multiple data types.
+        If no argument is given, the constructor creates a new empty queue.
+
+        Args:
+            collection (list, optional): A list to initialize the queue with. Defaults to [].
+        """
         self._queue = collection
     
     def get(self) -> list:

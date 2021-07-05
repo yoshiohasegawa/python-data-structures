@@ -35,6 +35,13 @@ class Stack:
     """
 
     def __init__(self, collection=[]):
+        """
+        An iterable data structure or collection that may contain multiple data types.
+        If no argument is given, the constructor creates a new empty stack.
+
+        Args:
+            collection (list, optional): A list to initialize the stack with. Defaults to [].
+        """
         self._stack = collection
     
     def get(self) -> list:

@@ -1,13 +1,13 @@
 # Third party imports
 import pytest
 # pydatastructs imports
-from pydatastructs import Queue
+from pydatastructs.queue import Queue
 
 # Setup
 # initialize _queue in pytest fixture to be used in individual method tests
 @pytest.fixture
 def queue():
-    _queue = Queue([1, '2', {'3': 3}])
+    _queue = Queue(collection=[1, '2', {'3': 3}])
     return _queue
 
 # Executions
