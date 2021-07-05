@@ -26,9 +26,8 @@ def test_length(stack: Stack):
 def test_is_empty(stack: Stack):
     assert stack.is_empty() == False
 
-    # loops through stack indexes in reverse order (2, 1, 0)
-    for idx in range(stack.length() - 1, -1, -1):
-        stack.pop(idx)
+    for idx in range(stack.length()):
+        stack.pop()
     assert stack.is_empty() == True
 
 # push() adds an item to the top of the stack
@@ -51,25 +50,15 @@ def test_push(stack: Stack):
 
 # pop() removes an item from the top of the stack
 # pop() returns the removed item
-# pop() accepts an optional argument denoting the index of the item to be popped
-# pop() will raise an IndexError if the index is out of range
+# pop() will raise an IndexError if there are no items in the stack
 def test_pop(stack: Stack):
     item = stack.pop()
     assert item == {'3': 3}
     assert stack.get() == [1, '2']
 
     stack.push({'3': 3})
-    item = stack.pop(1)
-    assert item == '2'
-    assert stack.get() == [1, {'3': 3}]
+    for idx in range(stack.length()):
+        stack.pop()
 
-    stack.push('2')
-    item = stack.pop(-2)
-    assert item == {'3': 3}
-    assert stack.get() == [1, '2']
-
-    stack.push({'3': 3})
     with pytest.raises(IndexError):
-        stack.pop(3)
-    with pytest.raises(IndexError):
-        stack.pop(-4)
+        stack.pop()

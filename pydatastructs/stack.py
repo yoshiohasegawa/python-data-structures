@@ -29,8 +29,6 @@ from typing import TypeVar
 
 T = TypeVar('T')
 
-list
-
 class Stack:
     """
     An iterable data structure or collection that may contain multiple data types.
@@ -79,34 +77,19 @@ class Stack:
         """
         self._stack.append(val)
     
-    def pop(self, idx=-1) -> T:
+    def pop(self) -> T:
         """
-        This method is used to pop an item off of the stack.
-        If no argument is given, the method will pop and return the top item.
-
-        Args:
-            idx (int, optional): The index of the item to be popped. Defaults to -1.
+        This method is used to pop an item off of the top of the stack.
 
         Raises:
-            IndexError: Raised when the given index is out of range.
+            IndexError: Raised when there are no items to pop.
 
         Returns:
             T: The popped item.
         """
-        minimum = -len(self._stack) - 1
-        maximum = len(self._stack) -1
 
-        if (idx < minimum) or (idx > maximum):
-            raise IndexError('Stack index out of range')
-
-        item = self._stack[idx]
-        if idx == 0:
-            self._stack = self._stack[1:]
-        elif idx == -1:
-            self._stack = self._stack[:-1]
-        elif idx > 0:
-            self._stack = self._stack[:idx] + self._stack[idx + 1:]
-        elif idx < 0:
-            self._stack = self._stack[:idx] + self._stack[idx + 1:]
-
-        return item
+        if self._stack == []:
+            raise IndexError('Index out of range, the stack is empty.')
+        else:
+            item = self._stack.pop()
+            return item
