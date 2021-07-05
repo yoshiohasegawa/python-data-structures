@@ -19,6 +19,8 @@
 #    Name                                       Description
 # ----------                  ------------------------------------------------
 # __init__                    Constructor
+# add                         Adds a node to the children collection
+# contains                    Verifies if a value is in the sub-tree, or not
 #*****************************************************************************
 # Imported Packages:
 from typing import TypeVar
