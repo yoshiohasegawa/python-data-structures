@@ -30,5 +30,5 @@ setup(
   install_requires=[
           'typing'
       ],
-  keywords = ['Data Structures', 'Collections', 'Stack', 'Queue', 'Tree', 'Binary Tree', 'Heap', 'Linked List'],
+  keywords = ['Python', 'Data Structures', 'Collections', 'Stack', 'Queue', 'Tree', 'Binary Tree', 'Heap', 'Linked List'],
 )
