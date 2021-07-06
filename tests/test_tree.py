@@ -28,7 +28,7 @@ def test_add(tree: Tree):
         temp_node = temp_node.children[0]
         count += 1
     
-# contains() returns a boolean verifying if a value is found within a sub-tree
+# contains() returns a boolean verifying if a value is found within a Tree
 def test_contains(tree: Tree):
     assert tree.contains(1) == True
 
