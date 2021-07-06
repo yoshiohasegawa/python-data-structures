@@ -12,9 +12,9 @@
 # structure containing nodes. When this class is instantiated, the root node
 # is created. Each node has a value property and, a left and right property.
 # The left and right properties point to the left and right child nodes. The 
-# left child node will always have a value that is less than its parents 
+# left child node will always have a value that is less than its parent's 
 # value. Additionally, the right child node will always have a value that is
-# greater than its parents value. Each child node is a sub-binarysearchtree.
+# greater than its parent's value. Each child node is a sub-binarysearchtree.
 #
 # Class Methods
 # ----------------------------------------------------------------------------
@@ -33,8 +33,8 @@ class BinarySearchTree:
     """
     A node-based data structure where each node has a value and, left and right
     properties that point to child nodes (child nodes can be None). The left
-    nodes value will always be less than the parent nodes value. The right nodes
-    value will always be greater than the parent nodes value. If no argument is
+    node\'s value will always be less than the parent node\'s value. The right node\'s
+    value will always be greater than the parent node\'s value. If no argument is
     given, the constructor creates a root node with a value of None.
     """
 
@@ -42,8 +42,8 @@ class BinarySearchTree:
         """
         A node-based data structure where each node has a value and, left and right
         properties that point to child nodes (child nodes can be None). The left
-        nodes value will always be less than the parent nodes value. The right nodes
-        value will always be greater than the parent nodes value. If no argument is
+        node\'s value will always be less than the parent node\'s value. The right node\'s
+        value will always be greater than the parent node\'s value. If no argument is
         given, the constructor creates a root node with a value of None.
 
         Args:
