@@ -2,7 +2,7 @@ import pathlib
 from setuptools import setup
 
 HERE = pathlib.Path(__file__).parent
-README = (HERE/'README.md').read_text()
+LONG_DESCRIPTION = (HERE/'assets/long_description.md').read_text()
 
 setup(
   name = 'pydatastructs',
@@ -10,7 +10,7 @@ setup(
   author = 'Yoshio Hasegawa',
   author_email = 'yoshio.seisuke.hasegawa@gmail.com',
   description = 'A package that contains common data structures',
-  long_description = README,
+  long_description = LONG_DESCRIPTION,
   long_description_content_type = 'text/markdown',
   url = 'https://github.com/yoshiohasegawa/python-data-structures',
   download_url = 'https://github.com/yoshiohasegawa/python-data-structures/archive/refs/tags/v1.1.0.tar.gz',

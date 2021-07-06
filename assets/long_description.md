@@ -1,16 +1,6 @@
 <h1 align="center">Python Data Structures</h1>
 <h3 align="center">⚠️ This package is currently in development ⚠️</h3>
 
-# Table of Contents
-1. [About](#about)
-2. [Getting Started](#getting-started)
-3. [Data Structures](#data-structures)
-    * [Stack](#stack)
-    * [Queue](#queue)
-    * [Tree](#tree)
-    * [Linked List](#linked-list)
-4. [Contact](#contact)
-
 # About
 A Python package that contains common data structures.
 
