@@ -71,7 +71,7 @@ class Queue:
         This method is used to check whether the queue is empty or not.
 
         Returns:
-            bool: True if the queue is empty. Otherwise, false.
+            bool: True if the queue is empty. Otherwise, False.
         """
         if self._queue == []:
             return True

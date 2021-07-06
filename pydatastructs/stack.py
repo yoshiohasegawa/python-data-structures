@@ -70,7 +70,7 @@ class Stack:
         This method is used to check whether the stack is empty or not.
 
         Returns:
-            bool: True if the stack is empty. Otherwise, false.
+            bool: True if the stack is empty. Otherwise, False.
         """
         if self._stack == []:
             return True

@@ -64,7 +64,7 @@ class Tree:
             value (T): The value to search for.
 
         Returns:
-            bool: True if the value was found. Otherwise, false.
+            bool: True if the value was found. Otherwise, False.
         """
         def traverse(children: list) -> bool:
             for node in children:
