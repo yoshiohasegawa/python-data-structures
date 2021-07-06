@@ -11,6 +11,14 @@ def stack():
     return _stack
 
 # Executions
+# Constructor accepts argument of type list
+def test_init():
+    stack = Stack(['I', 'am', 'a', 'list!'])
+    assert stack.get() == ['I', 'am', 'a', 'list!']
+
+    with pytest.raises(TypeError):
+        stack = Stack('I am not a list...')
+
 # get() returns the entire stack
 def test_get(stack: Stack):
     assert stack.get() == [1, '2', {'3': 3}]

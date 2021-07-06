@@ -43,7 +43,10 @@ class Queue:
         Args:
             collection (list, optional): A list to initialize the queue with. Defaults to [].
         """
-        self._queue = collection
+        if isinstance(collection, list):
+            self._queue = collection
+        else:
+            raise TypeError('Argument \'collection\' must be of type list.')
     
     def get(self) -> list:
         """

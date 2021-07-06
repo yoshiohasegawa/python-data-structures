@@ -11,6 +11,14 @@ def queue():
     return _queue
 
 # Executions
+# Constructor accepts argument of type list
+def test_init():
+    queue = Queue(['I', 'am', 'a', 'list!'])
+    assert queue.get() == ['I', 'am', 'a', 'list!']
+
+    with pytest.raises(TypeError):
+        queue = Queue('I am not a list...')
+
 # get() returns the entire queue
 def test_get(queue: Queue):
     assert queue.get() == [1, '2', {'3': 3}]

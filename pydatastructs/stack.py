@@ -42,7 +42,10 @@ class Stack:
         Args:
             collection (list, optional): A list to initialize the stack with. Defaults to [].
         """
-        self._stack = collection
+        if isinstance(collection, list):
+            self._stack = collection
+        else:
+            raise TypeError('Argument \'collection\' must be of type list.')
     
     def get(self) -> list:
         """
