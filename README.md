@@ -8,6 +8,7 @@
     * [Stack](#stack)
     * [Queue](#queue)
     * [Tree](#tree)
+    * [Binary Search Tree](#binary-search-tree)
     * [Linked List](#linked-list)
 4. [Contact](#contact)
 
@@ -23,10 +24,11 @@ user@machine:~/$ pip install pydatastructs
 
 Then, import it into your project:
 ```python
-from pydatastructs import Stack, Queue, Tree, LinkedList
+from pydatastructs import Stack, Queue, Tree, BinarySearchTree, LinkedList
 my_stack = Stack(collection=[1, '2', {'3': 3}])
 my_queue = Queue(collection=[4.4, [5], (6)])
 my_tree = Tree(value='I am Groot')
+my_binarysearchtree = BinarySearchTree(value=10)
 my_linkedlist = LinkedList(value='HEAD')
 ```
 
@@ -37,6 +39,8 @@ Information about the stack data structure...
 Information about the queue data structure...
 ## Tree
 Information about the tree data structure...
+## Binary Search Tree
+Information about the binary search tree data structure...
 ## Linked List
 Information about the linkedlist data structure...
 
