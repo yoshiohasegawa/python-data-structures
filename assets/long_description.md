@@ -1,8 +1,8 @@
 <h1 align="center">Python Data Structures</h1>
-<h3 align="center">⚠️ This package is currently in development ⚠️</h3>
+<h4 align="center">For all of your data structure needs</h4>
 
 # About
-A Python package that contains common data structures.
+A Python package that contains common data structures. Data structures within this package also contain associated search and sorting algorithms. The intention of this package is mostly a learning endeavor but, it may also be used for various build purposes. I hope you find it easy to understand and interact with. If you have any questions or comments, please feel free to [reach out](#contact).
 
 # Getting Started
 ## Installation
@@ -23,15 +23,37 @@ my_linkedlist = LinkedList(value='HEAD')
 
 # Data Structures
 ## Stack
-Information about the stack data structure...
+A list or array based data structure with last-in-first-out (LIFO) properties.
+### Methods
+- get()
+- length()
+- is_empty()
+- push()
+- pop()
 ## Queue
-Information about the queue data structure...
+A list or array based data structure with first-in-first-out (FIFO) properties.
+### Methods
+- get()
+- length()
+- is_empty()
+- enqueue()
+- dequeue()
 ## Tree
-Information about the tree data structure...
+A node based data structure where each node contains a value property and a children property. The children property is a collection of child nodes. Finally, each node itself is a tree or sub-tree.
+### Methods
+- add()
+- contains()
 ## Binary Search Tree
-Information about the binary search tree data structure...
+A node based data structure where each node contains a value property and, a left and right property. The left and right properties point to potential child nodes. The left node's value will always be less than the parent node's value. The right node's value will always be greater than the parent node's value. Finally, each node itself is a tree or sub-tree.
+### Methods
+- insert()
+- contains()
 ## Linked List
-Information about the linkedlist data structure...
+A node based data structure containing a head and tail property. The head points to the root node and, the tail points to the last node in the linked list. Each node has a value property and a next property, which points to the next node in the linked list.
+### Methods
+- append()
+- remove_head()
+- find_node()
 
 # Contact
 For support, feedback or, to report a bug, you may contact the maintainer:
