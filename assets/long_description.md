@@ -30,6 +30,7 @@ A list or array based data structure with last-in-first-out (LIFO) properties.
 - is_empty()
 - push()
 - pop()
+- merge_sort()
 ## Queue
 A list or array based data structure with first-in-first-out (FIFO) properties.
 ### Methods
@@ -38,6 +39,7 @@ A list or array based data structure with first-in-first-out (FIFO) properties.
 - is_empty()
 - enqueue()
 - dequeue()
+- merge_sort()
 ## Tree
 A node based data structure where each node contains a value property and a children property. The children property is a collection of child nodes. Finally, each node itself is a tree or sub-tree.
 ### Methods
