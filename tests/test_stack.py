@@ -13,11 +13,11 @@ def stack():
 # Executions
 # Constructor accepts argument of type list
 def test_init():
-    stack = Stack(['I', 'am', 'a', 'list!'])
+    stack = Stack(collection=['I', 'am', 'a', 'list!'])
     assert stack.get() == ['I', 'am', 'a', 'list!']
 
     with pytest.raises(TypeError):
-        stack = Stack('I am not a list...')
+        stack = Stack(collection='I am not a list...')
 
 # get() returns the entire stack
 def test_get(stack: Stack):
@@ -69,3 +69,30 @@ def test_pop(stack: Stack):
 
     with pytest.raises(IndexError):
         stack.pop()
+
+# merge_sort() raises TypeError if provided an incorrect data type
+# merge_sort() raises ValueError if provided an incorrect value
+def test_merge_sort():
+    stack = Stack([2, 3, 1])
+
+    with pytest.raises(TypeError):
+        stack.merge_sort(order=0)
+
+    with pytest.raises(ValueError):
+        stack.merge_sort(order='small to big')
+
+# merge_sort() sorts the stack in ascending order by default, and if specified.
+def test_merge_sort_asc():
+    stack = Stack([6, 4, 8, 10, 3, 5, 1, 7, 9, 2])
+    stack.merge_sort()
+    assert stack.get() == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    
+    stack2 = Stack([2, 1, 3])
+    stack2.merge_sort(order='asc')
+    assert stack2.get() == [1, 2, 3]
+
+# merge_sort() sorts the stack in descending order if specified.
+def test_merge_sort_desc():
+    stack = Stack([6, 4, 8, 10, 3, 5, 1, 7, 9, 2])
+    stack.merge_sort(order='desc')
+    assert stack.get() == [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]

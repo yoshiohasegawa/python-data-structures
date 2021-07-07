@@ -13,11 +13,11 @@ def queue():
 # Executions
 # Constructor accepts argument of type list
 def test_init():
-    queue = Queue(['I', 'am', 'a', 'list!'])
+    queue = Queue(collection=['I', 'am', 'a', 'list!'])
     assert queue.get() == ['I', 'am', 'a', 'list!']
 
     with pytest.raises(TypeError):
-        queue = Queue('I am not a list...')
+        queue = Queue(collection='I am not a list...')
 
 # get() returns the entire queue
 def test_get(queue: Queue):
@@ -69,3 +69,30 @@ def test_dequeue(queue: Queue):
 
     with pytest.raises(IndexError):
         queue.dequeue()
+
+# merge_sort() raises TypeError if provided an incorrect data type
+# merge_sort() raises ValueError if provided an incorrect value
+def test_merge_sort():
+    queue = Queue([2, 3, 1])
+
+    with pytest.raises(TypeError):
+        queue.merge_sort(order=0)
+
+    with pytest.raises(ValueError):
+        queue.merge_sort(order='small to big')
+
+# merge_sort() sorts the queue in ascending order by default, and if specified.
+def test_merge_sort_asc():
+    queue = Queue([6, 4, 8, 10, 3, 5, 1, 7, 9, 2])
+    queue.merge_sort()
+    assert queue.get() == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    
+    queue2 = Queue([2, 1, 3])
+    queue2.merge_sort(order='asc')
+    assert queue2.get() == [1, 2, 3]
+
+# merge_sort() sorts the queue in descending order if specified.
+def test_merge_sort_desc():
+    queue = Queue([6, 4, 8, 10, 3, 5, 1, 7, 9, 2])
+    queue.merge_sort(order='desc')
+    assert queue.get() == [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
