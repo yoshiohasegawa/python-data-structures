@@ -1,6 +1,7 @@
 #*****************************************************************************
 # Programmer: Yoshio Hasegawa
 # Class Name: Queue
+# Parent Class: List
 #
 # Revision     Date                        Release Comment
 # --------  ----------  ------------------------------------------------------
@@ -24,18 +25,20 @@
 # enqueue                     Adds an item to the end of the queue
 # dequeue                     Removes an item from the front of the queue
 #*****************************************************************************
+# Importing parent class List
+from .list import List
 # Imported Packages:
 from typing import TypeVar
 
 T = TypeVar('T')
 
-class Queue:
+class Queue(List):
     """
     An iterable data structure or collection that may contain multiple data types.
     If no argument is given, the constructor creates a new empty queue.
     """
 
-    def __init__(self, collection=[]):
+    def __init__(self, collection: list=[]):
         """
         An iterable data structure or collection that may contain multiple data types.
         If no argument is given, the constructor creates a new empty queue.
@@ -43,10 +46,7 @@ class Queue:
         Args:
             collection (list, optional): A list to initialize the queue with. Defaults to [].
         """
-        if isinstance(collection, list):
-            self._queue = collection
-        else:
-            raise TypeError('Argument \'collection\' must be of type list.')
+        List.__init__(self, collection=collection)
     
     def get(self) -> list:
         """
@@ -55,7 +55,7 @@ class Queue:
         Returns:
             list: Queue containing all data.
         """
-        return self._queue
+        return self._data
     
     def length(self) -> int:
         """
@@ -64,7 +64,7 @@ class Queue:
         Returns:
             int: The number of items in the queue.
         """
-        return len(self._queue)
+        return len(self._data)
     
     def is_empty(self) -> bool:
         """
@@ -73,7 +73,7 @@ class Queue:
         Returns:
             bool: True if the queue is empty. Otherwise, False.
         """
-        if self._queue == []:
+        if self._data == []:
             return True
         else:
             return False
@@ -85,7 +85,7 @@ class Queue:
         Args:
             val (T): An item of any data type.
         """
-        self._queue = [val] + self._queue
+        self._data = [val] + self._data
     
     def dequeue(self) -> T:
         """
@@ -97,8 +97,8 @@ class Queue:
         Returns:
             T: The removed item.
         """
-        if self._queue == []:
+        if self._data == []:
             raise IndexError('Index out of range, the queue is empty.')
         else:
-            item = self._queue.pop()
+            item = self._data.pop()
             return item

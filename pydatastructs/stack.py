@@ -1,6 +1,7 @@
 #*****************************************************************************
 # Programmer: Yoshio Hasegawa
 # Class Name: Stack
+# Parent Class: List
 #
 # Revision     Date                        Release Comment
 # --------  ----------  ------------------------------------------------------
@@ -23,18 +24,20 @@
 # push                        Adds an item to the top of the stack
 # pop                         Removes an item from the top of the stack
 #*****************************************************************************
+# Importing parent class List
+from .list import List
 # Imported Packages:
 from typing import TypeVar
 
 T = TypeVar('T')
 
-class Stack:
+class Stack(List):
     """
     An iterable data structure or collection that may contain multiple data types.
     If no argument is given, the constructor creates a new empty stack.
     """
 
-    def __init__(self, collection=[]):
+    def __init__(self, collection: list=[]):
         """
         An iterable data structure or collection that may contain multiple data types.
         If no argument is given, the constructor creates a new empty stack.
@@ -42,10 +45,7 @@ class Stack:
         Args:
             collection (list, optional): A list to initialize the stack with. Defaults to [].
         """
-        if isinstance(collection, list):
-            self._stack = collection
-        else:
-            raise TypeError('Argument \'collection\' must be of type list.')
+        List.__init__(self, collection=collection)
     
     def get(self) -> list:
         """
@@ -54,7 +54,7 @@ class Stack:
         Returns:
             list: Stack containing all data.
         """
-        return self._stack
+        return self._data
     
     def length(self) -> int:
         """
@@ -63,7 +63,7 @@ class Stack:
         Returns:
             int: The number of items in the stack.
         """
-        return len(self._stack)
+        return len(self._data)
     
     def is_empty(self) -> bool:
         """
@@ -72,7 +72,7 @@ class Stack:
         Returns:
             bool: True if the stack is empty. Otherwise, False.
         """
-        if self._stack == []:
+        if self._data == []:
             return True
         else:
             return False
@@ -84,7 +84,7 @@ class Stack:
         Args:
             val (T): An item of any data type.
         """
-        self._stack.append(val)
+        self._data.append(val)
     
     def pop(self) -> T:
         """
@@ -96,8 +96,8 @@ class Stack:
         Returns:
             T: The removed item.
         """
-        if self._stack == []:
+        if self._data == []:
             raise IndexError('Index out of range, the stack is empty.')
         else:
-            item = self._stack.pop()
+            item = self._data.pop()
             return item
