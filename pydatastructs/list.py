@@ -44,4 +44,34 @@ class List:
         else:
             raise TypeError('Argument \'collection\' must be of type list.')
     
+    def get(self) -> list:
+        """
+        This method is used to return the collection.
+
+        Returns:
+            list: collection containing all data.
+        """
+        return self._data
+    
+    def length(self) -> int:
+        """
+        This method is used to get the length of the collection.
+
+        Returns:
+            int: The number of items in the collection.
+        """
+        return len(self._data)
+    
+    def is_empty(self) -> bool:
+        """
+        This method is used to check whether the collection is empty or not.
+
+        Returns:
+            bool: True if the collection is empty. Otherwise, False.
+        """
+        if self._data == []:
+            return True
+        else:
+            return False
+    
     

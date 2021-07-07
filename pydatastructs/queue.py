@@ -48,36 +48,6 @@ class Queue(List):
         """
         List.__init__(self, collection=collection)
     
-    def get(self) -> list:
-        """
-        This method is used to return the queue.
-
-        Returns:
-            list: Queue containing all data.
-        """
-        return self._data
-    
-    def length(self) -> int:
-        """
-        This method is used to get the length of the queue.
-
-        Returns:
-            int: The number of items in the queue.
-        """
-        return len(self._data)
-    
-    def is_empty(self) -> bool:
-        """
-        This method is used to check whether the queue is empty or not.
-
-        Returns:
-            bool: True if the queue is empty. Otherwise, False.
-        """
-        if self._data == []:
-            return True
-        else:
-            return False
-    
     def enqueue(self, val: T) -> None:
         """
         This method is used to add items to the end (left) of the queue.
