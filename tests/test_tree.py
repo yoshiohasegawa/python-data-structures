@@ -66,3 +66,26 @@ def test_depth_first_traversal(tree: Tree):
     
     tree.depth_first_traversal(add_to_result)
     assert result == [1, 2, 4, 5, 3, 6, 7]
+
+# breadth_first_traversal() traverses the tree in a breadth first manner
+# breadth_first_traversal() runs a callback function on each node in order
+def test_breadth_first_traversal(tree: Tree):
+    tree.add(2)
+    tree.add(3)
+    tree.children[0].add(4)
+    tree.children[0].add(5)
+    tree.children[1].add(6)
+    tree.children[1].add(7)
+    # tree: 
+    #            1
+    #        /      \
+    #      2         3
+    #   /    \     /   \
+    #  4      5   6     7
+
+    result = []
+    def add_to_result(node: Tree):
+        result.append(node.value)
+    
+    tree.breadth_first_traversal(add_to_result)
+    assert result == [1, 2, 3, 4, 5, 6, 7]

@@ -107,3 +107,14 @@ class Tree:
             #  3      4   6     7
             for idx in range(len(temp_node.children) -1, -1, -1):
                 nodes_to_visit.append(temp_node.children[idx])
+    
+    def breadth_first_traversal(self, callback: Callable[[Tree], None]) -> None:
+        nodes_to_visit = []
+        nodes_to_visit.append(self)
+
+        while nodes_to_visit:
+            temp_node = nodes_to_visit.pop()
+            callback(temp_node)
+
+            for node in temp_node.children:
+                nodes_to_visit = [node] + nodes_to_visit
