@@ -16,6 +16,7 @@
 A Python package that contains common data structures. Data structures within this package also contain associated search and sorting algorithms. The intention of this package is mostly a learning endeavor but, it may also be used for various build purposes. I hope you find it easy to understand and interact with. If you have any questions or comments, please feel free to [reach out](#contact).
 
 # Getting Started
+Further information regarding this package can be found on the Python Package Index website, [pypi.org/pydatastructs](https://pypi.org/project/pydatastructs/).
 ## Installation
 To get started, install the package:
 ```console
