@@ -21,6 +21,10 @@
 #    Name                                       Description
 # ----------                  ------------------------------------------------
 # __init__                    Constructor
+# insert                      Adds node in the appropriate place
+# contains                    Verifies if a value is in the tree, or not
+# depth_first_traversal       Runs a callback on every node, depth first
+# breadth_first_traversal     Runs a callback on every node, breadth first
 #*****************************************************************************
 # Importing PEP 563 -- Postponed Evaluation of Annotations
 from __future__ import annotations

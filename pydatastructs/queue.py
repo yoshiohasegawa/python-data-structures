@@ -19,9 +19,6 @@
 #    Name                                       Description
 # ----------                  ------------------------------------------------
 # __init__                    Constructor
-# get                         Returns the queue collection
-# length                      Returns the number of items in the queue
-# is_empty                    Verifies if the queue is empty, or not
 # enqueue                     Adds an item to the end of the queue
 # dequeue                     Removes an item from the front of the queue
 #*****************************************************************************

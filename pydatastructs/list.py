@@ -17,6 +17,10 @@
 #    Name                                       Description
 # ----------                  ------------------------------------------------
 # __init__                    Constructor
+# get                         Returns the collection
+# length                      Returns the number of items in the collection
+# is_empty                    Verifies if the collection is empty, or not
+# merge_sort                  Sorts the collection in asc or desc order
 #*****************************************************************************
 # Imported Packages:
 

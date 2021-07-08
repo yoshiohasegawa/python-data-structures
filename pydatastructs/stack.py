@@ -18,9 +18,6 @@
 #    Name                                       Description
 # ----------                  ------------------------------------------------
 # __init__                    Constructor
-# get                         Returns the stack collection
-# length                      Returns the number of items in the stack
-# is_empty                    Verifies if the stack is empty, or not
 # push                        Adds an item to the top of the stack
 # pop                         Removes an item from the top of the stack
 #*****************************************************************************
