@@ -94,7 +94,7 @@ class LinkedList:
         be removed and returned. Then, the head and tail property will be assigned None.
 
         Returns:
-            Node | None: The removed head, or None if there are no nodes in the linked list.
+            Optional[Node]: The removed head, or None if there are no nodes in the linked list.
         """
         if self.head == None:
             return None
@@ -114,7 +114,7 @@ class LinkedList:
             value (T): The value to search for.
 
         Returns:
-            Node | None: The node with the specified value,
+            Optional[Node]: The node with the specified value,
             or None if there are no nodes with the specified value in the linked list.
         """
         def traverse(node) -> Union[Node, bool]:

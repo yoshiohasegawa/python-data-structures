@@ -81,7 +81,14 @@ class Tree:
         else:
             return False
     
-    def depth_first_traversal(self, callback: Callable[..., any]) -> None:
+    def depth_first_traversal(self, callback: Callable[[Tree], None]) -> None:
+        """
+        This method is used to run a callback function on every node within this tree
+        in a depth first manner, in order.
+
+        Args:
+            callback (Callable[[Tree], None]): The callback function to be run on each node.
+        """
         nodes_to_visit = []
         nodes_to_visit.append(self)
 
@@ -89,5 +96,14 @@ class Tree:
             temp_node = nodes_to_visit.pop()
             callback(temp_node)
 
+            # Appending child nodes in reverse order (right to left) in order to traverse
+            # depth first, from left to right. More specifically, the nodes will be visited 
+            # in ascending order based on The visual example provided below.
+            # tree: 
+            #            1
+            #        /      \
+            #      2         5
+            #   /    \     /   \
+            #  3      4   6     7
             for idx in range(len(temp_node.children) -1, -1, -1):
                 nodes_to_visit.append(temp_node.children[idx])

@@ -44,7 +44,8 @@ def test_contains(tree: Tree):
         assert tree.contains(count) == True
         count += 1
 
-# depth_first_traversal()
+# depth_first_traversal() traverses the tree in a depth first manner
+# depth_first_traversal() runs a callback function on each node in order
 def test_depth_first_traversal(tree: Tree):
     tree.add(2)
     tree.add(3)
