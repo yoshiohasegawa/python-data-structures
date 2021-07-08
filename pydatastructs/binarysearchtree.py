@@ -25,7 +25,7 @@
 # Importing PEP 563 -- Postponed Evaluation of Annotations
 from __future__ import annotations
 # Imported Packages:
-from typing import TypeVar, Optional
+from typing import TypeVar, Optional, Callable
 
 T = TypeVar('T')
 
@@ -104,3 +104,61 @@ class BinarySearchTree:
                     return False
         
         return traverse(self)
+
+    def depth_first_traversal(self, callback: Callable[[BinarySearchTree], None]) -> None:
+        """
+        This method is used to run a callback function on every node within this tree
+        in a depth first manner, in order.
+
+        Args:
+            callback (Callable[[BinarySearchTree], None]): The callback function to be run on each node.
+        """
+        nodes_to_visit = []
+        nodes_to_visit.append(self)
+
+        while nodes_to_visit:
+            temp_node = nodes_to_visit.pop()
+            callback(temp_node)
+
+            # Appending child nodes in reverse order (right then left) to traverse
+            # depth first, from left to right. More specifically, the nodes will be visited 
+            # in ascending order based on The visual example provided below.
+            # tree: 
+            #            1
+            #        /      \
+            #      2         5
+            #   /    \     /   \
+            #  3      4   6     7
+            if temp_node.right:
+                nodes_to_visit.append(temp_node.right)
+            if temp_node.left:
+                nodes_to_visit.append(temp_node.left)
+    
+    def breadth_first_traversal(self, callback: Callable[[BinarySearchTree], None]) -> None:
+        """
+        This method is used to run a callback function on every node within this tree
+        in a breadth first manner, in order.
+
+        Args:
+            callback (Callable[[BinarySearchTree], None]): The callback function to be run on each node.
+        """
+        nodes_to_visit = []
+        nodes_to_visit.append(self)
+
+        while nodes_to_visit:
+            temp_node = nodes_to_visit.pop()
+            callback(temp_node)
+
+            # Enqueuing child nodes in order (left then right) to traverse
+            # breadth first, from left to right. More specifically, the nodes will be visited 
+            # in ascending order based on The visual example provided below.
+            # tree: 
+            #            1
+            #        /      \
+            #      2         3
+            #   /    \     /   \
+            #  4      5   6     7
+            if temp_node.left:
+                nodes_to_visit = [temp_node.left] + nodes_to_visit
+            if temp_node.right:
+                nodes_to_visit = [temp_node.right] + nodes_to_visit

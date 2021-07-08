@@ -30,7 +30,7 @@ def test_insert(binarysearchtree: BinarySearchTree):
     assert right.left.value == 11
     assert right.right.value == 16
 
-# contains() returns a boolean verifying if a value is found within a Binary Search Tree
+# contains() returns a boolean verifying if a value is found within a binary search tree
 def test_contains(binarysearchtree: BinarySearchTree):
     assert binarysearchtree.contains(10) == True
 
@@ -41,3 +41,45 @@ def test_contains(binarysearchtree: BinarySearchTree):
     
     for val in values:
         assert binarysearchtree.contains(val) == True
+
+# depth_first_traversal() traverses the binary search tree in a depth first manner
+# depth_first_traversal() runs a callback function on each node in order
+def test_depth_first_traversal(binarysearchtree: BinarySearchTree):
+    values = [6, 14, 4, 12, 8, 16]
+
+    for val in values:
+        binarysearchtree.insert(val)
+    # tree: 
+    #            10
+    #        /      \
+    #      6         14
+    #   /    \     /   \
+    #  4      8   12     16
+
+    result = []
+    def add_to_result(node: BinarySearchTree):
+        result.append(node.value)
+    
+    binarysearchtree.depth_first_traversal(add_to_result)
+    assert result == [10, 6, 4, 8, 14, 12, 16]
+
+# breadth_first_traversal() traverses the binary search tree in a breadth first manner
+# breadth_first_traversal() runs a callback function on each node in order
+def test_breadth_first_traversal(binarysearchtree: BinarySearchTree):
+    values = [6, 14, 4, 12, 8, 16]
+
+    for val in values:
+        binarysearchtree.insert(val)
+    # tree: 
+    #            10
+    #        /      \
+    #      6         14
+    #   /    \     /   \
+    #  4      8   12     16
+
+    result = []
+    def add_to_result(node: BinarySearchTree):
+        result.append(node.value)
+    
+    binarysearchtree.breadth_first_traversal(add_to_result)
+    assert result == [10, 6, 14, 4, 8, 12, 16]
