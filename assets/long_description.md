@@ -46,11 +46,14 @@ A node based data structure where each node contains a value property and a chil
 - add()
 - contains()
 - depth_first_traversal()
+- breadth_first_traversal()
 ## Binary Search Tree
 A node based data structure where each node contains a value property and, a left and right property. The left and right properties point to potential child nodes. The left node's value will always be less than the parent node's value. The right node's value will always be greater than the parent node's value. Finally, each node itself is a tree or sub-tree.
 ### Methods
 - insert()
 - contains()
+- depth_first_traversal()
+- breadth_first_traversal()
 ## Linked List
 A node based data structure containing a head and tail property. The head points to the root node and, the tail points to the last node in the linked list. Each node has a value property and a next property, which points to the next node in the linked list.
 ### Methods
