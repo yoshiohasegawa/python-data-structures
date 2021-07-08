@@ -96,7 +96,7 @@ class Tree:
             temp_node = nodes_to_visit.pop()
             callback(temp_node)
 
-            # Appending child nodes in reverse order (right to left) in order to traverse
+            # Appending child nodes in reverse order (right to left) to traverse
             # depth first, from left to right. More specifically, the nodes will be visited 
             # in ascending order based on The visual example provided below.
             # tree: 
@@ -123,5 +123,14 @@ class Tree:
             temp_node = nodes_to_visit.pop()
             callback(temp_node)
 
+            # Enqueuing child nodes in order (left to right) in order to traverse
+            # breadth first, from left to right. More specifically, the nodes will be visited 
+            # in ascending order based on The visual example provided below.
+            # tree: 
+            #            1
+            #        /      \
+            #      2         3
+            #   /    \     /   \
+            #  4      5   6     7
             for node in temp_node.children:
                 nodes_to_visit = [node] + nodes_to_visit
