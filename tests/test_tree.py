@@ -43,3 +43,25 @@ def test_contains(tree: Tree):
     while count <= 7:
         assert tree.contains(count) == True
         count += 1
+
+# depth_first_traversal()
+def test_depth_first_traversal(tree: Tree):
+    tree.add(2)
+    tree.add(3)
+    tree.children[0].add(4)
+    tree.children[0].add(5)
+    tree.children[1].add(6)
+    tree.children[1].add(7)
+    # tree: 
+    #            1
+    #        /      \
+    #      2         3
+    #   /    \     /   \
+    #  4      5   6     7
+
+    result = []
+    def add_to_result(node: Tree):
+        result.append(node.value)
+    
+    tree.depth_first_traversal(add_to_result)
+    assert result == [1, 2, 4, 5, 3, 6, 7]

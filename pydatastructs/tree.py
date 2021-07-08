@@ -22,36 +22,36 @@
 # add                         Adds a node to the children collection
 # contains                    Verifies if a value is in the sub-tree, or not
 #*****************************************************************************
+# Importing PEP 563 -- Postponed Evaluation of Annotations
+from __future__ import annotations
 # Imported Packages:
-from typing import TypeVar
+from typing import TypeVar, List, Callable
 
 T = TypeVar('T')
 
 class Tree:
     """
     A node-based data structure where each node has a value and children property.
-    If no argument is given, the constructor creates a root node with a value of None.
-    An empty children collection is created regardless of an argument being provided.
+    When thic class is instantiated, an empty children collection is created.
     """
 
-    def __init__(self, value: T=None):
+    def __init__(self, value: T):
         """
         A node-based data structure where each node has a value and children property.
-        If no argument is given, the constructor creates a root node with a value of None.
-        An empty children collection is created regardless of an argument being provided.
+        When thic class is instantiated, an empty children collection is created.
 
         Args:
-            value (T, optional): A value to initialize the root node value property with. Defaults to None.
+            value (T): A value to initialize the root node value property with.
         """
         self.value = value
-        self.children = []
+        self.children: List[Tree] = []
     
-    def add(self, value: T=None) -> None:
+    def add(self, value: T) -> None:
         """
         This method adds a child node to the children collection owned by this node.
 
         Args:
-            value (T, optional): A value to initialize the created child node with. Defaults to None.
+            value (T): A value to initialize the created child node with.
         """
         child_node = Tree(value)
         self.children.append(child_node)
@@ -80,3 +80,14 @@ class Tree:
             return True
         else:
             return False
+    
+    def depth_first_traversal(self, callback: Callable[..., any]) -> None:
+        nodes_to_visit = []
+        nodes_to_visit.append(self)
+
+        while nodes_to_visit:
+            temp_node = nodes_to_visit.pop()
+            callback(temp_node)
+
+            for idx in range(len(temp_node.children) -1, -1, -1):
+                nodes_to_visit.append(temp_node.children[idx])
