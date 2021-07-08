@@ -25,7 +25,7 @@
 # Importing PEP 563 -- Postponed Evaluation of Annotations
 from __future__ import annotations
 # Imported Packages:
-from typing import TypeVar
+from typing import TypeVar, Optional
 
 T = TypeVar('T')
 
@@ -34,31 +34,29 @@ class BinarySearchTree:
     A node-based data structure where each node has a value and, left and right
     properties that point to child nodes (child nodes can be None). The left
     node\'s value will always be less than the parent node\'s value. The right node\'s
-    value will always be greater than the parent node\'s value. If no argument is
-    given, the constructor creates a root node with a value of None.
+    value will always be greater than the parent node\'s value.
     """
 
-    def __init__(self, value: T=None):
+    def __init__(self, value: T):
         """
         A node-based data structure where each node has a value and, left and right
         properties that point to child nodes (child nodes can be None). The left
         node\'s value will always be less than the parent node\'s value. The right node\'s
-        value will always be greater than the parent node\'s value. If no argument is
-        given, the constructor creates a root node with a value of None.
+        value will always be greater than the parent node\'s value.
 
         Args:
-            value (T, optional): A value to initialize the root node value property with. Defaults to None.
+            value (T): A value to initialize the root node value property with.
         """
         self.value = value
-        self.left = None
-        self.right = None
+        self.left: Optional[BinarySearchTree] = None
+        self.right: Optional[BinarySearchTree] = None
     
-    def insert(self, value: T=None) -> BinarySearchTree:
+    def insert(self, value: T) -> BinarySearchTree:
         """
         This method adds a child node to this Binary Search Tree in the appropriate place.
 
         Args:
-            value (T, optional): A value to initialize the created child node with. Defaults to None.
+            value (T): A value to initialize the created child node with.
 
         Returns:
             BinarySearchTree: This entire Binary Search Tree (root node).

@@ -26,7 +26,7 @@
 # find_node                   Finds the node with a given value
 #*****************************************************************************
 # Imported Packages:
-from typing import TypeVar, Union
+from typing import TypeVar, Union, Optional
 
 T = TypeVar('T')
 
@@ -42,7 +42,7 @@ class Node:
             value (T, optional): A value to initialize the node value property with. Defaults to None.
         """
         self.value = value
-        self.next = None
+        self.next: Optional[Node] = None
 
 
 class LinkedList:
@@ -86,7 +86,7 @@ class LinkedList:
             self.tail.next = new_node
             self.tail = new_node
     
-    def remove_head(self) -> Union[Node, None]:
+    def remove_head(self) -> Optional[Node]:
         """
         This method is used to remove and return the head of the linked list. Once this method is called,
         the head property will shift and point to the next node in the linked list. If the linked list
@@ -105,7 +105,7 @@ class LinkedList:
                 self.tail = None
             return removed_head
     
-    def find_node(self, value: T) -> Union[Node, None]:
+    def find_node(self, value: T) -> Optional[Node]:
         """
         This method finds and returns the first node with the provided value within this linked list.
         Or, if such node does not exist this method will return None.
