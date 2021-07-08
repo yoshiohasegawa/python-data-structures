@@ -109,6 +109,13 @@ class Tree:
                 nodes_to_visit.append(temp_node.children[idx])
     
     def breadth_first_traversal(self, callback: Callable[[Tree], None]) -> None:
+        """
+        This method is used to run a callback function on every node within this tree
+        in a breadth first manner, in order.
+
+        Args:
+            callback (Callable[[Tree], None]): The callback function to be run on each node.
+        """
         nodes_to_visit = []
         nodes_to_visit.append(self)
 
