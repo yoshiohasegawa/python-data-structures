@@ -45,6 +45,7 @@ A node based data structure where each node contains a value property and a chil
 ### Methods
 - add()
 - contains()
+- depth_first_traversal()
 ## Binary Search Tree
 A node based data structure where each node contains a value property and, a left and right property. The left and right properties point to potential child nodes. The left node's value will always be less than the parent node's value. The right node's value will always be greater than the parent node's value. Finally, each node itself is a tree or sub-tree.
 ### Methods
