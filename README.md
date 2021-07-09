@@ -116,6 +116,12 @@ def add_to_result(node: Tree):
 
 my_tree.depth_first_traversal(add_to_result)
 print(result) # [1, 2, 4, 5, 3, 6, 7]
+              # my_tree: 
+              #            1
+              #        /      \
+              #      2         3
+              #   /    \     /   \
+              #  4      5   6     7
 ```
 
 ## Binary Search Tree
@@ -143,6 +149,12 @@ def add_to_result(node: BinarySearchTree):
 
 my_binarysearchtree.breadth_first_traversal(add_to_result)
 print(result) # [10, 6, 14, 4, 8, 12, 16]
+              # my_binarysearchtree: 
+              #            10
+              #        /      \
+              #      6         14
+              #   /    \     /   \
+              #  4      8   12     16
 ```
 
 ## Linked List
