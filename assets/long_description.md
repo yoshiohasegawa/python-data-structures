@@ -5,6 +5,7 @@
 A Python package that contains common data structures. Data structures within this package also contain associated search and sorting algorithms. The intention of this package is mostly a learning endeavor but, it may also be used for various build purposes. I hope you find it easy to understand and interact with. If you have any questions or comments, please feel free to [reach out](#contact).
 
 # Getting Started
+Further information regarding this package can be found on GitHub: [python-data-structures](https://github.com/yoshiohasegawa/python-data-structures).
 ## Installation
 To get started, install the package:
 ```console
@@ -60,6 +61,16 @@ A node based data structure containing a head and tail property. The head points
 - append()
 - remove_head()
 - find_node()
+## Max Heap
+A complete binary tree data structure represented as an array where, every parent node's value is greater than or equal to their child node's values.
+### Methods
+- get()
+- insert()
+## Min Heap
+A complete binary tree data structure represented as an array where, every parent node's value is less than or equal to their child node's values.
+### Methods
+- get()
+- insert()
 
 # Contact
 For support, feedback or, to report a bug, you may contact the maintainer:
