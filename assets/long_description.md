@@ -10,7 +10,7 @@ Further information regarding this package can be found on GitHub: [python-data-
 ## Installation
 To get started, install the package:
 ```console
-user@machine:~/$ pip install pydatastructs
+pip install pydatastructs
 ```
 
 Then, import it into your project:
