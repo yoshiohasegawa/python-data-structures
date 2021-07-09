@@ -27,12 +27,16 @@ user@machine:~/$ pip install pydatastructs
 
 Then, import it into your project:
 ```python
-from pydatastructs import Stack, Queue, Tree, BinarySearchTree, LinkedList
+from pydatastructs import Stack, Queue, Tree, BinarySearchTree, LinkedList, MaxHeap, MinHeap
 my_stack = Stack(collection=[1, '2', {'3': 3}])
 my_queue = Queue(collection=[4.4, [5], (6)])
 my_tree = Tree(value='I am Groot')
 my_binarysearchtree = BinarySearchTree(value=10)
 my_linkedlist = LinkedList(value='HEAD')
+my_maxheap = MaxHeap()
+my_maxheap.insert(100)
+my_minheap = MinHeap()
+my_minheap.insert(1)
 ```
 
 # Data Structures
