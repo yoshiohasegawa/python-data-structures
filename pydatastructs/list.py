@@ -10,7 +10,8 @@
 # ----------------------------------------------------------------------------
 # This is a parent class inherited by the Stack and Queue data structures. It
 # contains the _data property used by both Stack and Queue, which is a list.
-# It also contains some shared methods used to alter the data structure.
+# It also contains some shared methods used to get or set/alter the data
+# structure.
 #
 # Class Methods
 # ----------------------------------------------------------------------------
@@ -27,15 +28,17 @@
 class List:
     """
     A class containing a _data property which contains a list. This class
-    also contains methods used to alter the list.
-    If no argument is given, the constructor creates a new empty list.
+    also contains methods used to get or set/alter the list. The contained
+    methods are specific to a stack or queue data structure. If no argument
+    is given, the constructor creates a new empty list.
     """
 
     def __init__(self, collection: list=[]):
         """
         A class containing a _data property which contains a list. This class
-        also contains methods used to alter the list.
-        If no argument is given, the constructor creates a new empty list.
+        also contains methods used to get or set/alter the list. The contained
+        methods are specific to a stack or queue data structure. If no argument
+        is given, the constructor creates a new empty list.
 
         Args:
             collection (list, optional): A list to initialize the _data with. Defaults to [].
