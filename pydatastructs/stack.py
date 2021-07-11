@@ -22,7 +22,7 @@
 # pop                         Removes an item from the top of the stack
 #*****************************************************************************
 # Importing parent class List
-from .list import List
+from pydatastructs.list import List
 # Imported Packages:
 from typing import TypeVar
 

@@ -23,7 +23,7 @@
 # dequeue                     Removes an item from the front of the queue
 #*****************************************************************************
 # Importing parent class List
-from .list import List
+from pydatastructs.list import List
 # Imported Packages:
 from typing import TypeVar
 
