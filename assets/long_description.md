@@ -2,7 +2,7 @@
 <h4 align="center">For all of your data structure needs</h4>
 
 # About
-A Python package that contains common data structures. Data structures within this package also contain associated search and sorting algorithms. The intention of this package is mostly a learning endeavor but, it may also be used for various build purposes. I hope you find it easy to understand and interact with. If you have any questions or comments, please feel free to [reach out](#contact).
+A Python package that contains common data structures. Data structures within this package also contain associated search and sorting algorithms. The intention of this package is mostly a learning endeavor but, it may also be used for various build purposes. I hope you find it easy to understand and interact with. If you have any questions or comments, please feel free to reach out.
 
 # Getting Started
 Further information regarding this package can be found on GitHub: [python-data-structures](https://github.com/yoshiohasegawa/python-data-structures).
