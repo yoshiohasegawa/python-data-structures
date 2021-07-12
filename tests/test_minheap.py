@@ -11,6 +11,17 @@ def minheap():
     return _minheap
 
 # Executions
+# Constructor accepts argument of type list
+def test_init():
+    minheap = MinHeap(collection=[])
+    assert minheap.get() == []
+    
+    minheap = MinHeap(collection=[5, 4, 3, 2, 1])
+    assert minheap.get() == [1, 2, 4, 5, 3]
+
+    with pytest.raises(TypeError):
+        minheap = MinHeap(collection='I am not a list...')
+
 # insert() adds a a value to the min heap in the appropriate place.
 def test_insert(minheap: MinHeap):
     values = [7, 6, 5, 4, 3, 2, 1]

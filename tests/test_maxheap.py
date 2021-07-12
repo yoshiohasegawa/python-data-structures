@@ -11,6 +11,17 @@ def maxheap():
     return _maxheap
 
 # Executions
+# Constructor accepts argument of type list
+def test_init():
+    maxheap = MaxHeap(collection=[])
+    assert maxheap.get() == []
+
+    maxheap = MaxHeap(collection=[1, 2, 3, 4, 5])
+    assert maxheap.get() == [5, 4, 2, 1, 3]
+
+    with pytest.raises(TypeError):
+        maxheap = MaxHeap(collection='I am not a list...')
+
 # insert() adds a a value to the max heap in the appropriate place.
 def test_insert(maxheap: MaxHeap):
     values = [1, 2, 3, 4, 5, 6, 7]

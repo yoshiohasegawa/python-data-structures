@@ -55,11 +55,16 @@ class MinHeap(Heap):
             collection (Optional[list], optional): A list to initialize the min heap
             with. Defaults to None.
         """
-        super().__init__(collection)
-    #     if collection is None:
-    #         self.__heapify()
-        
-    # def __heapify(self) -> None:
+        if isinstance(collection, list):
+            super().__init__(collection=[])
+            # If a valid collection is provided,
+            # construct the min heap with the collection
+            for value in collection:
+                self.insert(value)
+        elif collection is None:
+            super().__init__(collection=[])
+        else:
+            raise TypeError('Argument \'collection\' must be of type list.')
     
     def __build(self) -> None:
         """
