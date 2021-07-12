@@ -17,8 +17,8 @@
 # Useful formulas:
 # For a given node at index i...
 # The parent node index = (i - 1) // 2
-# The left child node index = (2 * 1) + 1
-# The right child node index = (2 * 1) + 2
+# The left child node index = (2 * i) + 1
+# The right child node index = (2 * i) + 2
 #
 # Class Methods
 # ----------------------------------------------------------------------------
@@ -28,9 +28,9 @@
 # insert                      Adds a node in the appropriate place
 #*****************************************************************************
 # Importing parent class List
-from .heap import Heap
+from pydatastructs.heap import Heap
 # Imported Packages:
-from typing import TypeVar
+from typing import TypeVar, Optional
 
 T = TypeVar('T')
 
@@ -46,6 +46,35 @@ class MaxHeap(Heap):
         node's value is greater than or equal to their child node's values.
         """
         Heap.__init__(self)
+    
+    def __build(self):
+        """
+        This method is used to re-build the max heap when an element is removed,
+        to ensure that the max heap properties hold.
+        """
+        parent_idx = 0
+        left_idx = 1
+        right_idx = 2
+        length = len(self._array)
+
+        # While the bottom/end of the max heap has not been reached
+        while left_idx < length or right_idx < length:
+
+            # initialize the child_idx to the child with that larger value
+            if right_idx < length:
+                child_idx = right_idx if self._array[left_idx] < self._array[right_idx] else left_idx
+            else:
+                child_idx = left_idx
+
+            # Swap the parent and child if the child's value is larger than the parent's value
+            if self._array[child_idx] > self._array[parent_idx]:
+                self._swap(parent_idx, child_idx)
+                parent_idx = child_idx
+                right_idx = (2 * child_idx) + 2
+                left_idx = (2 * child_idx) + 1
+            # Otherwise, break out of the while loop
+            else:
+                break
     
     def insert(self, value: T) -> None:
         """
@@ -63,14 +92,32 @@ class MaxHeap(Heap):
 
             # While the value to be inserted is greater than it's parent,
             # keep swapping the parent and child from the bottom up until
-            # the max heap is balance or, until swapped with the root node.
+            # the max heap properties hold or, until swapped with the root node.
             while value > self._array[parent_idx] and parent_idx >= 0:
-                temp_value = self._array[parent_idx]
-                self._array[parent_idx] = value
-                self._array[curr_idx] = temp_value
+                self._swap(parent_idx, curr_idx)
                 curr_idx = parent_idx
                 parent_idx = (parent_idx - 1) // 2
 
+    def remove_max(self) -> Optional[T]:
+        """
+        This method removes and returns the max value from the max heap and,
+        re-builds the heap so that the max heap properties hold.
 
-
-                
+        Returns:
+            Optional[T]: The max value, or None if there are no nodes in the max heap.
+        """
+        if self._array == []:
+            return None
+        else:
+            # Remove top node
+            value = self._array[0]
+            self._array = self._array[1:]
+            # If nodes remaing in the max heap...
+            if self._array:
+                # Move end node to the top
+                end_node = self._array.pop()
+                self._array = [end_node] + self._array
+                # Rebuild the heap (heapify)
+                self.__build()
+            # Return the top node
+            return value
