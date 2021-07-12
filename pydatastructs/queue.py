@@ -25,7 +25,7 @@
 # Importing parent class List
 from pydatastructs.list import List
 # Imported Packages:
-from typing import TypeVar
+from typing import TypeVar, Optional
 
 T = TypeVar('T')
 
@@ -35,15 +35,16 @@ class Queue(List):
     If no argument is given, the constructor creates a new empty queue.
     """
 
-    def __init__(self, collection: list=[]):
+    def __init__(self, collection: Optional[list]=None):
         """
         An iterable data structure or collection that may contain multiple data types.
         If no argument is given, the constructor creates a new empty queue.
 
         Args:
-            collection (list, optional): A list to initialize the queue with. Defaults to [].
+            collection (Optional[list], optional): A list to initialize the queue with.
+            Defaults to None.
         """
-        List.__init__(self, collection=collection)
+        super().__init__(collection=collection)
     
     def enqueue(self, val: T) -> None:
         """

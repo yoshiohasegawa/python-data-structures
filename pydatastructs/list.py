@@ -24,6 +24,7 @@
 # merge_sort                  Sorts the collection in asc or desc order
 #*****************************************************************************
 # Imported Packages:
+from typing import Optional
 
 class List:
     """
@@ -33,7 +34,7 @@ class List:
     is given, the constructor creates a new empty list.
     """
 
-    def __init__(self, collection: list=[]):
+    def __init__(self, collection: Optional[list]=None):
         """
         A class containing a _data property which contains a list. This class
         also contains methods used to get or set/alter the list. The contained
@@ -41,14 +42,16 @@ class List:
         is given, the constructor creates a new empty list.
 
         Args:
-            collection (list, optional): A list to initialize the _data property
-            with. Defaults to [].
+            collection (Optional[list], optional): A list to initialize the _data
+            property with. Defaults to None.
 
         Raises:
             TypeError: Raised when provided a non-list data type as an argument.
         """
         if isinstance(collection, list):
             self._data = collection
+        elif collection is None:
+            self._data = []
         else:
             raise TypeError('Argument \'collection\' must be of type list.')
     
