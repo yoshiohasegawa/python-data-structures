@@ -6,14 +6,14 @@ LONG_DESCRIPTION = (HERE/'assets/long_description.md').read_text()
 
 setup(
   name = 'pydatastructs',
-  version = '1.2.2',
+  version = '1.2.3',
   author = 'Yoshio Hasegawa',
   author_email = 'yoshio.seisuke.hasegawa@gmail.com',
   description = 'A package that contains common data structures',
   long_description = LONG_DESCRIPTION,
   long_description_content_type = 'text/markdown',
   url = 'https://github.com/yoshiohasegawa/python-data-structures',
-  download_url = 'https://github.com/yoshiohasegawa/python-data-structures/archive/refs/tags/v1.2.2.tar.gz',
+  download_url = 'https://github.com/yoshiohasegawa/python-data-structures/archive/refs/tags/v1.2.3.tar.gz',
   license='MIT',
   classifiers=[
     "Development Status :: 4 - Beta",
