@@ -25,7 +25,9 @@
 #    Name                                       Description
 # ----------                  ------------------------------------------------
 # __init__                    Constructor
+# __build                     Heapifies the max heap after removal of a node
 # insert                      Adds a node in the appropriate place
+# remove_max                  Removes and returns the max value node
 #*****************************************************************************
 # Importing parent class List
 from pydatastructs.heap import Heap

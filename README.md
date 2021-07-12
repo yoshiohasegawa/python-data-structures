@@ -186,6 +186,7 @@ A complete binary tree data structure represented as an array where, every paren
 ### Methods
 - get()
 - insert()
+- remove_max()
 
 ### Usage
 ```python
@@ -212,6 +213,7 @@ A complete binary tree data structure represented as an array where, every paren
 ### Methods
 - get()
 - insert()
+- remove_min()
 
 ### Usage
 ```python

@@ -1,6 +1,6 @@
 #*****************************************************************************
 # Programmer: Yoshio Hasegawa
-# Class Name: MaxHeap
+# Class Name: MinHeap
 # Parent Class: Heap
 #
 # Revision     Date                        Release Comment
@@ -25,7 +25,9 @@
 #    Name                                       Description
 # ----------                  ------------------------------------------------
 # __init__                    Constructor
+# __build                     Heapifies the min heap after removal of a node
 # insert                      Adds a node in the appropriate place
+# remove_min                  Removes and returns the min value node
 #*****************************************************************************
 # Importing parent class List
 from pydatastructs.heap import Heap
