@@ -17,8 +17,8 @@
 # Useful formulas:
 # For a given node at index i...
 # The parent node index = (i - 1) // 2
-# The left child node index = (2 * 1) + 1
-# The right child node index = (2 * 1) + 2
+# The left child node index = (2 * i) + 1
+# The right child node index = (2 * i) + 2
 #
 # Class Methods
 # ----------------------------------------------------------------------------
@@ -28,7 +28,7 @@
 # insert                      Adds a node in the appropriate place
 #*****************************************************************************
 # Importing parent class List
-from .heap import Heap
+from pydatastructs.heap import Heap
 # Imported Packages:
 from typing import TypeVar
 

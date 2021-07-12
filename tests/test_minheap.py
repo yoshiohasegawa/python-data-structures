@@ -11,7 +11,7 @@ def minheap():
     return _minheap
 
 # Executions
-# insert() adds
+# insert() adds a a value to the min heap in the appropriate place.
 def test_insert(minheap: MinHeap):
     values = [7, 6, 5, 4, 3, 2, 1]
 
