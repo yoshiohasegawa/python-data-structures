@@ -16,8 +16,8 @@
 # Useful formulas:
 # For a given node at index i...
 # The parent node index = (i - 1) // 2
-# The left child node index = (2 * 1) + 1
-# The right child node index = (2 * 1) + 2
+# The left child node index = (2 * i) + 1
+# The right child node index = (2 * i) + 2
 #
 # Class Methods
 # ----------------------------------------------------------------------------
@@ -25,28 +25,26 @@
 # ----------                  ------------------------------------------------
 # __init__                    Constructor
 # get                         Returns the array
+# _swap                       Swaps two values within the heap
 #*****************************************************************************
 # Imported Packages:
-from typing import TypeVar
-
-T = TypeVar('T')
 
 class Heap:
     """
-    A class containing a _array property which contains a list. This class
+    A class containing an _array property which contains a list. This class
     also contains methods used to get or set/alter the list. The contained
-    methods are specific to a heap data structure. Once this class is
-    instantiated, and empty list is assign to the _array property.
+    methods are specific to a heap data structure. When instantiated the 
+    constructor assigns an empty list to the _array property.
     """
 
     def __init__(self):
         """
-        A class containing a _array property which contains a list. This class
+        A class containing an _array property which contains a list. This class
         also contains methods used to get or set/alter the list. The contained
-        methods are specific to a heap data structure. Once this class is
-        instantiated, and empty list is assign to the _array property.
+        methods are specific to a heap data structure. When instantiated the 
+        constructor assigns an empty list to the _array property.
         """
-        self._array: list = []
+        self._array = []
     
     def get(self) -> list:
         """
@@ -56,3 +54,16 @@ class Heap:
             list: array containing all data represented in the heap.
         """
         return self._array
+    
+    def _swap(self, idx1: int, idx2: int) -> None:
+        """
+        This method is used to swap two values within the heap, at two 
+        provided indices.
+
+        Args:
+            idx1 (int): Index location for the first value.
+            idx2 (int): Index location for the second value.
+        """
+        temp_value = self._array[idx1]
+        self._array[idx1] = self._array[idx2]
+        self._array[idx2] = temp_value
