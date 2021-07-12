@@ -30,22 +30,65 @@
 # Importing parent class List
 from pydatastructs.heap import Heap
 # Imported Packages:
-from typing import TypeVar
+from typing import TypeVar, Optional
 
 T = TypeVar('T')
 
 class MinHeap(Heap):
     """
     A complete binary tree data structure represented as an array. Every parent
-    node's value is less than or equal to their child node's values.
+    node's value is less than or equal to their child node's values. If no
+    argument is given, the constructor creates a new empty min heap. If an
+    argument is provided, the constructor will alter (heapify) the collection
+    to ensure that the min heap properties hold.
     """
 
-    def __init__(self):
+    def __init__(self, collection: Optional[list]=None):
         """
         A complete binary tree data structure represented as an array. Every parent
-        node's value is less than or equal to their child node's values.
+        node's value is less than or equal to their child node's values. If no
+        argument is given, the constructor creates a new empty min heap. If an
+        argument is provided, the constructor will alter (heapify) the collection
+        to ensure that the min heap properties hold.
+
+        Args:
+            collection (Optional[list], optional): A list to initialize the min heap
+            with. Defaults to None.
         """
-        Heap.__init__(self)
+        super().__init__(collection)
+    #     if collection is None:
+    #         self.__heapify()
+        
+    # def __heapify(self) -> None:
+    
+    def __build(self) -> None:
+        """
+        This method is used to re-build the min heap when an element is removed,
+        to ensure that the min heap properties hold.
+        """
+        parent_idx = 0
+        left_idx = 1
+        right_idx = 2
+        length = len(self._array)
+
+        # While the bottom/end of the min heap has not been reached
+        while left_idx < length or right_idx < length:
+
+            # initialize the child_idx to the child with the smaller value
+            if right_idx < length:
+                child_idx = right_idx if self._array[left_idx] > self._array[right_idx] else left_idx
+            else:
+                child_idx = left_idx
+
+            # Swap the parent and child if the child's value is smaller than the parent's value
+            if self._array[child_idx] < self._array[parent_idx]:
+                self._swap(parent_idx, child_idx)
+                parent_idx = child_idx
+                right_idx = (2 * child_idx) + 2
+                left_idx = (2 * child_idx) + 1
+            # Otherwise, break out of the while loop
+            else:
+                break
     
     def insert(self, value: T) -> None:
         """
@@ -63,7 +106,7 @@ class MinHeap(Heap):
  
             # While the value to be inserted is less than it's parent,
             # keep swapping the parent and child from the bottom up until
-            # the max heap is balance or, until swapped with the root node.
+            # the min heap properties hold or, until swapped with the root node.
             while value < self._array[parent_idx] and parent_idx >= 0:
                 temp_value = self._array[parent_idx]
                 self._array[parent_idx] = value
@@ -71,6 +114,27 @@ class MinHeap(Heap):
                 curr_idx = parent_idx
                 parent_idx = (parent_idx - 1) // 2
 
+    def remove_min(self) -> Optional[T]:
+        """
+        This method removes and returns the min value from the min heap and,
+        re-builds the heap so that the min heap properties hold.
 
-
+        Returns:
+            Optional[T]: The min value, or None if there are no nodes in the min heap.
+        """
+        if self._array == []:
+            return None
+        else:
+            # Remove top node
+            value = self._array[0]
+            self._array = self._array[1:]
+            # If nodes remaing in the min heap...
+            if self._array:
+                # Move end node to the top
+                end_node = self._array.pop()
+                self._array = [end_node] + self._array
+                # Rebuild the heap (heapify)
+                self.__build()
+            # Return the top node
+            return value
                 

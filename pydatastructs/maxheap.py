@@ -37,17 +37,32 @@ T = TypeVar('T')
 class MaxHeap(Heap):
     """
     A complete binary tree data structure represented as an array. Every parent
-    node's value is greater than or equal to their child node's values.
+    node's value is greater than or equal to their child node's values. If no
+    argument is given, the constructor creates a new empty max heap. If an
+    argument is provided, the constructor will alter (heapify) the collection
+    to ensure that the max heap properties hold.
     """
 
-    def __init__(self):
+    def __init__(self, collection: Optional[list]=None):
         """
         A complete binary tree data structure represented as an array. Every parent
-        node's value is greater than or equal to their child node's values.
+        node's value is greater than or equal to their child node's values. If no
+        argument is given, the constructor creates a new empty max heap. If an
+        argument is provided, the constructor will alter (heapify) the collection
+        to ensure that the max heap properties hold.
+
+        Args:
+            collection (Optional[list], optional): A list to initialize the max heap
+            with. Defaults to None.
         """
-        Heap.__init__(self)
+        super().__init__(collection)
+    #     if collection is None:
+    #         self.__heapify()
     
-    def __build(self):
+    # def __heapify(self) -> None:
+
+    
+    def __build(self) -> None:
         """
         This method is used to re-build the max heap when an element is removed,
         to ensure that the max heap properties hold.
@@ -60,7 +75,7 @@ class MaxHeap(Heap):
         # While the bottom/end of the max heap has not been reached
         while left_idx < length or right_idx < length:
 
-            # initialize the child_idx to the child with that larger value
+            # initialize the child_idx to the child with the larger value
             if right_idx < length:
                 child_idx = right_idx if self._array[left_idx] < self._array[right_idx] else left_idx
             else:

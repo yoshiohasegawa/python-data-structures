@@ -28,23 +28,36 @@
 # _swap                       Swaps two values within the heap
 #*****************************************************************************
 # Imported Packages:
+from typing import Optional
 
 class Heap:
     """
     A class containing an _array property which contains a list. This class
     also contains methods used to get or set/alter the list. The contained
-    methods are specific to a heap data structure. When instantiated the 
-    constructor assigns an empty list to the _array property.
+    methods are specific to a heap data structure. If no argument is given,
+    the constructor assigns a new empty list to the _array property.
     """
 
-    def __init__(self):
+    def __init__(self, collection: Optional[list]=None):
         """
         A class containing an _array property which contains a list. This class
         also contains methods used to get or set/alter the list. The contained
-        methods are specific to a heap data structure. When instantiated the 
-        constructor assigns an empty list to the _array property.
+        methods are specific to a heap data structure. If no argument is given,
+        the constructor assigns a new empty list to the _array property.
+
+        Args:
+            collection (Optional[list], optional): A list to initialize the _array
+            property with. Defaults to None.
+
+        Raises:
+            TypeError: Raised when provided a non-list data type as an argument.
         """
-        self._array = []
+        if isinstance(collection, list):
+            self._array = collection
+        elif collection is None:
+            self._array = []
+        else:
+            raise TypeError('Argument \'collection\' must be of type list.')
     
     def get(self) -> list:
         """
