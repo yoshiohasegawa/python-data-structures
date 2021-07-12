@@ -39,7 +39,8 @@ class Node:
         A node object that contains a value and next property.
 
         Args:
-            value (T, optional): A value to initialize the node value property with. Defaults to None.
+            value (T, optional): A value to initialize the node value property
+            with. Defaults to None.
         """
         self.value = value
         self.next: Optional[Node] = None
@@ -61,7 +62,8 @@ class LinkedList:
         the constructor assigns None to the head and tail properties.
 
         Args:
-            value (T, optional): A value to initialize the head node value property with. Defaults to None.
+            value (T, optional): A value to initialize the head node value property
+            with. Defaults to None.
         """
         if value:
             self.head = Node(value)

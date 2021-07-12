@@ -41,7 +41,8 @@ class List:
         is given, the constructor creates a new empty list.
 
         Args:
-            collection (list, optional): A list to initialize the _data with. Defaults to [].
+            collection (list, optional): A list to initialize the _data property
+            with. Defaults to [].
 
         Raises:
             TypeError: Raised when provided a non-list data type as an argument.
